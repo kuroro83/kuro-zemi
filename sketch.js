@@ -1,3 +1,4 @@
+//完成版
 //----エンティティ関連の関数 ----------------------------------------------
 
 //全エンティティ共通
@@ -31,9 +32,9 @@ function drawPlayer(entity){
   fill("#F7D060");//黄色
   square(entity.x,entity.y,40,8);//丸角の四角
   fill('#000000');//黒
-  circle(entity.x+13,entity.y-10,10);//眼
+  circle(entity.x+13,entity.y-10,8);//眼
   fill('#E21818')//赤
-  rect(entity.x+10,entity.y+5,20,10);//口
+  rect(entity.x+10,entity.y+8,20,10);//口
 }
 
 function playerIsAlive(entity) {
@@ -104,6 +105,9 @@ let blocks;
 
 /** ゲームの状態。"play" か "gameover" を入れるものとする */
 let gameState;
+
+//効果音の設定
+//let se;
 
 /** ブロックを上下ペアで作成し、`blocks` に追加する */
 function addBlockPair() {
@@ -189,7 +193,7 @@ function onMousePress() {
     }
     
   }
-  
+  //se.play();
 }
 
 
@@ -201,7 +205,7 @@ function setup() {
 
   resetGame();
 
-  //se=loadSound("se_jump_001.wav");//効果音読み込み
+  //se = loadSound("se_jump_001.wav");//効果音読み込み
 }
 
 function draw() {
